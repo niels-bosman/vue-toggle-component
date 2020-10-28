@@ -38,5 +38,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
