@@ -1,19 +1,20 @@
 <template>
-  <section class="wrapper" @click="toggled = !toggled">
-    <span v-if="location === 'left'" class="title">{{ title }}</span>
+  <section class="wrapper">
     <input
         :id="id"
         v-model="toggled"
         :name="name ? name : false"
         class="toggle"
         type="checkbox"
+        @click="toggle()"
     />
     <label :for="id" class="toggler" />
-    <span v-if="location === 'right'" class="title">{{ title }}</span>
+    <span class="title" @click="toggle()" v-text="title" />
   </section>
 </template>
 
 <script>
+
 export default {
   name: 'VueToggle',
 
@@ -21,11 +22,14 @@ export default {
     title:    { type: String, required: true },
     name:     { type: String, required: false },
     id:       { type: Number, required: true },
-    location: { type: String, default: 'right' },
   },
 
   data() {
     return { toggled: false }
+  },
+
+  methods: {
+    toggle: () => this.toggled = !this.toggled,
   },
 }
 </script>
