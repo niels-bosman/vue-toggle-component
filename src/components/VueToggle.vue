@@ -1,13 +1,12 @@
 <template>
-  <section class="wrapper">
+  <section class="wrapper" @click="toggled = !toggled">
     <span v-if="location === 'left'" class="title">{{ title }}</span>
     <input
         :id="id"
         v-model="toggled"
-        :name="name"
+        :name="name ? name : false"
         class="toggle"
         type="checkbox"
-        @click="toggled = !toggled"
     />
     <label :for="id" class="toggler" />
     <span v-if="location === 'right'" class="title">{{ title }}</span>
@@ -20,24 +19,18 @@ export default {
 
   props: {
     title:    { type: String, required: true },
-    name:     { type: String, default: null },
+    name:     { type: String, required: false },
     id:       { type: Number, required: true },
     location: { type: String, default: 'right' },
   },
 
   data() {
-    return {
-      toggled: false,
-    }
+    return { toggled: false }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-
-$height: 2em;
-$background: #F0F0F0;
-$succesful-toggle-color: #9FD6AE;
 
 .wrapper {
   display: flex;
@@ -45,6 +38,7 @@ $succesful-toggle-color: #9FD6AE;
   padding: 5px;
 
   > * {
+    cursor: pointer;
     margin: 0 5px;
   }
 }
@@ -52,7 +46,7 @@ $succesful-toggle-color: #9FD6AE;
 .title {
   display: inline-block;
   font-weight: 700;
-  line-height: $height;
+  line-height: 2em;
   vertical-align: middle;
 }
 
@@ -74,9 +68,8 @@ $succesful-toggle-color: #9FD6AE;
   }
 
   + .toggler {
-    background: $background;
+    background: #F0F0F0;
     border-radius: 2em;
-    cursor: pointer;
     display: block;
     height: 2em;
     outline: 0;
@@ -106,7 +99,7 @@ $succesful-toggle-color: #9FD6AE;
   }
 
   &:checked + .toggler {
-    background: $succesful-toggle-color;
+    background: #9FD6AE;
   }
 
   &:checked + .toggler:after {
