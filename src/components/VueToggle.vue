@@ -29,7 +29,7 @@ export default {
   },
 
   methods: {
-    toggle: () => this.toggled = !this.toggled,
+    toggle() { this.toggled = !this.toggled },
   },
 }
 </script>
