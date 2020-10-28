@@ -19,9 +19,9 @@ export default {
   name: 'VueToggle',
 
   props: {
-    title:    { type: String, required: true },
-    name:     { type: String, required: false },
-    id:       { type: Number, required: true },
+    title: { type: String, required: true },
+    name:  { type: String, required: false },
+    id:    { type: Number, required: true },
   },
 
   data() {
@@ -29,7 +29,9 @@ export default {
   },
 
   methods: {
-    toggle() { this.toggled = !this.toggled },
+    toggle() {
+      this.toggled = !this.toggled
+    },
   },
 }
 </script>
