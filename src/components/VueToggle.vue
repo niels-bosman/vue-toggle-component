@@ -50,12 +50,7 @@ export default {
 .toggle {
   display: none;
 
-  &,
   &:after,
-  &:before,
-  & *,
-  & *:after,
-  & *:before,
   & + .toggler {
     box-sizing: border-box;
 
@@ -88,10 +83,6 @@ export default {
       transition: left .2s ease;
       width: 50%;
       will-change: left;
-    }
-
-    &:before {
-      display: none;
     }
   }
 
