@@ -3,7 +3,7 @@
     <input
         :id="id"
         v-model="toggled"
-        :name="name ? name : false"
+        :name="name"
         class="toggle"
         type="checkbox"
         @click="toggle()"
@@ -19,9 +19,9 @@ export default {
   name: 'VueToggle',
 
   props: {
+    id:    { type: String, required: true },
+    name:  { type: [String, Boolean], default: false },
     title: { type: String, required: true },
-    name:  { type: String, required: false },
-    id:    { type: String, required: true  },
   },
 
   data() {
