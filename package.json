@@ -1,5 +1,5 @@
 {
-  "name": "vue-toggle-component",
+  "name": "@nehlis/vue-toggle-component",
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -39,13 +39,13 @@
     "not dead"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com"
   },
   "description": "## Project setup ``` yarn install ```",
   "main": "babel.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nehlis/vue-toggle-component.git"
+    "url": "https://github.com/nehlis/vue-toggle-component"
   },
   "keywords": [
     "Vue.js",
