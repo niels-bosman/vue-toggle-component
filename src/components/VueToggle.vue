@@ -54,6 +54,10 @@ export default {
   font-weight: 700;
   line-height: 2em;
   vertical-align: middle;
+  
+  &::selection {
+    background: none;
+  }
 }
 
 .toggle {
@@ -104,12 +108,14 @@ export default {
     }
   }
 
-  &:checked + .toggler {
-    background: #9FD6AE;
-  }
+  &:checked {
+    & + .toggler {
+      background: #9FD6AE;
 
-  &:checked + .toggler:after {
-    left: 50%;
+      &:after {
+        left: 50%;
+      }
+    }
   }
 }
 
