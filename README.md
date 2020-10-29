@@ -1,24 +1,32 @@
-# vue-toggle-component
+# Vue Toggle component
 
-## Project setup
-```
-yarn install
-```
+This is a project for transition element which height is auto.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Installation
 
-### Compiles and minifies for production
-```
-yarn build
+#### NPM
+```bash
+npm install --save vue-toggle-component@latest
 ```
 
-### Lints and fixes files
-```
-yarn lint
+## Import
+
+```javascript
+import VueToggle from 'vue-toggle-component'
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Example
+```
+<vue-toggle title="Toggle me" :id="'1'" />
+```
+
+### Author
+
+Niels Bosman
+
+Github: www.github.com/nehlis
+
+
+### License
+
+ISC
