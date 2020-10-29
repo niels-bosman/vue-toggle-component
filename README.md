@@ -1,6 +1,6 @@
 # Vue Toggle component
 
-This is a project for transition element which height is auto.
+This is a project that makes it easier to use a (checkbox) toggle component that's modern.
 
 ## Installation
 
