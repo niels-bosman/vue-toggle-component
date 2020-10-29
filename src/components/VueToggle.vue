@@ -1,15 +1,8 @@
 <template>
-  <section class="wrapper">
-    <input
-        :id="id"
-        v-model="toggled"
-        :name="name"
-        class="toggle"
-        type="checkbox"
-        @click="toggle()"
-    />
+  <section class="wrapper" :title="title">
+    <input :id="id" :name="name" v-model="toggled" class="toggle" type="checkbox" @click="toggled = !toggled" />
     <label :for="id" class="toggler" />
-    <span class="title" @click="toggle()" v-text="title" />
+    <span class="title" v-text="title" @click="toggled = !toggled" />
   </section>
 </template>
 
@@ -26,12 +19,6 @@ export default {
 
   data() {
     return { toggled: false }
-  },
-
-  methods: {
-    toggle() {
-      this.toggled = !this.toggled
-    },
   },
 }
 </script>
