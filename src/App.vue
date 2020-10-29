@@ -8,9 +8,7 @@
 import VueToggle from "@/components/VueToggle";
 
 export default {
-  name: 'App',
-  components: {
-    VueToggle
-  }
+  name:       'App',
+  components: { VueToggle },
 }
 </script>

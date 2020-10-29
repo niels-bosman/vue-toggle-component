@@ -21,7 +21,7 @@ export default {
   props: {
     title: { type: String, required: true },
     name:  { type: String, required: false },
-    id:    { type: Number, required: true },
+    id:    { type: String, required: true  },
   },
 
   data() {
@@ -54,7 +54,7 @@ export default {
   font-weight: 700;
   line-height: 2em;
   vertical-align: middle;
-  
+
   &::selection {
     background: none;
   }
