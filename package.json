@@ -1,7 +1,6 @@
 {
   "name": "vue-toggle-component",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -39,5 +38,26 @@
     "last 2 versions",
     "not dead"
   ],
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "description": "## Project setup ``` yarn install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nehlis/vue-toggle-component.git"
+  },
+  "keywords": [
+    "Vue.js",
+    "Toggle",
+    "component",
+    "Lightweight",
+    "Checkbox"
+  ],
+  "author": "Niels Bosman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nehlis/vue-toggle-component/issues"
+  },
+  "homepage": "https://github.com/nehlis/vue-toggle-component#readme"
 }
