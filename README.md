@@ -12,7 +12,7 @@ npm install --save vue-toggle-component
 ## Import
 
 ```javascript
-import VueToggle from "../../vue-toggle-component/src/components/VueToggle";
+import VueToggle from "@vue-toggle-component";
 ```
 
 ## Example

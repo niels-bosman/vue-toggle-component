@@ -1,6 +1,6 @@
 {
   "name": "vue-toggle-component",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -40,12 +40,9 @@
     "last 2 versions",
     "not dead"
   ],
-  "description": "## Project setup ``` yarn install ```",
+  "description": "Simple and lightweight Vue.js component that makes a clean looking toggle.",
   "main": "babel.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nehlis/vue-toggle-component.git"
-  },
+  "repository": "git+https://github.com/nehlis/vue-toggle-component.git",
   "keywords": [
     "Vue.js",
     "Toggle",
