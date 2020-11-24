@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-toggle title="Toggle me" :id="'1'" />
+    <vue-toggle title="Toggle me" id="1" />
   </div>
 </template>
 
