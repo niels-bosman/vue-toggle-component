@@ -27,7 +27,7 @@ import VueToggle from "@vue-toggle-component";
 
 Niels Bosman
 
-Github: www.github.com/nehlis
+Github: www.github.com/niels-bosman
 
 
 ### License
