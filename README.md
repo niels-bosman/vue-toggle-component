@@ -2,9 +2,12 @@
 
 This is a project that makes it easier to use a (checkbox) toggle component that's modern.
 
+![DEMO](https://user-images.githubusercontent.com/25898715/113936516-26964d00-97f8-11eb-850d-7cc74690ccf6.gif)
+
+
 ## Installation
 
-#### NPM
+#### npm
 ```bash
 npm install --save vue-toggle-component
 ```
