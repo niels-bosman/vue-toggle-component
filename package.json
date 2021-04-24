@@ -42,7 +42,7 @@
   ],
   "description": "Simple and lightweight Vue.js component that makes a clean looking toggle.",
   "main": "babel.config.js",
-  "repository": "git+https://github.com/nehlis/vue-toggle-component.git",
+  "repository": "git+https://github.com/niels-bosman/vue-toggle-component.git",
   "keywords": [
     "Vue.js",
     "Toggle",
@@ -53,7 +53,7 @@
   "author": "Niels Bosman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nehlis/vue-toggle-component/issues"
+    "url": "https://github.com/niels-bosman/vue-toggle-component/issues"
   },
-  "homepage": "https://github.com/nehlis/vue-toggle-component#readme"
+  "homepage": "https://github.com/niels-bosman/vue-toggle-component#readme"
 }
