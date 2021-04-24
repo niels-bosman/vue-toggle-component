@@ -12,13 +12,10 @@ export default {
   name: 'VueToggle',
 
   props: {
-    id:    { type: String, required: true },
-    name:  { type: [String, Boolean], default: false },
-    title: { type: String, required: true },
-  },
-
-  data() {
-    return { toggled: false }
+    id:      { type: String, required: true },
+    name:    { type: [String, Boolean], default: false },
+    title:   { type: String, required: true },
+    toggled: { type: Boolean, default: false },
   },
 }
 </script>
