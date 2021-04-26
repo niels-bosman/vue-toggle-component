@@ -1,4 +1,4 @@
-vue-toggle-components makes an ease to use, lightweight and highly customizable toggle component for [Vue.js](https://vuejs.org/). This component is available in both light and dark mode and it supports Vue 3.
+vue-toggle-component makes an ease to use, lightweight and highly customizable toggle component for [Vue.js](https://vuejs.org/). This component is available in both light and dark mode and it supports Vue 3.
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-toggle-component)
 ![npm](https://img.shields.io/npm/dt/vue-toggle-component)
