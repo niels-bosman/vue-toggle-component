@@ -39,7 +39,7 @@
     "last 2 versions",
     "not dead"
   ],
-  "description": "Simple and lightweight Vue.js component that makes a clean looking toggle.",
+  "description": "vue-toggle-component makes an ease to use, lightweight and highly customizable toggle component for Vue.js.",
   "main": "babel.config.js",
   "repository": "git+https://github.com/niels-bosman/vue-toggle-component.git",
   "keywords": [
