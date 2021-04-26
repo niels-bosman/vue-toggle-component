@@ -50,7 +50,7 @@
     "Checkbox"
   ],
   "author": "Niels Bosman",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/niels-bosman/vue-toggle-component/issues"
   },
