@@ -9,8 +9,6 @@ vue-toggle-components makes an ease to use, lightweight and highly customizable 
 
 ![Light theme](https://user-images.githubusercontent.com/25898715/116152862-c273f400-a6e6-11eb-8b4d-1017b92d14a5.gif)
 ![Dark theme](https://user-images.githubusercontent.com/25898715/116152879-c7d13e80-a6e6-11eb-87b3-9b606184ba1e.gif)
-
-![DEMO](https://user-images.githubusercontent.com/25898715/113936516-26964d00-97f8-11eb-850d-7cc74690ccf6.gif)
 ## Getting Started
 
 ### Installation
