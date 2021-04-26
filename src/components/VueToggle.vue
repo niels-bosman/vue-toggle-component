@@ -8,7 +8,7 @@
         type="checkbox"
         @click="toggleState = !toggleState"
     />
-    <label :for="id" class="toggler" :style="[toggleState ? {'background': activeColor} : null]"/>
+    <label :for="id" class="toggler" :style="[toggleState && {'background': activeColor}]"/>
     <span class="title" v-text="title" @click="toggleState = !toggleState"/>
   </section>
 </template>
