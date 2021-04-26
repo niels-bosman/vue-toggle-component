@@ -30,8 +30,8 @@ The main v2 version supports Vue 3.x only, for previous versions of Vue, check t
 
 | vue Version | vue-toggle-component version |
 | ----------- | ---------------------------- |
-| `2.x`       | `1.x`                        |
-| `3.x`       | `2.x`                        |
+| `2.x`       | `0.1.x`                        |
+| `3.x`       | `1.x`                        |
 
 ### Usage
 #### Example
