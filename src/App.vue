@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import VueToggle from "./components/VueToggle";
+import VueToggle from "@vue-toggle-component";
 
 export default {
   name: 'App',
