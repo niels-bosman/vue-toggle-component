@@ -1,12 +1,12 @@
 <template>
   <section class="wrapper" :class="{dark: darkTheme}" :title="title">
     <input
-        :id="id"
-        :name="name"
-        v-model="toggleState"
-        class="toggle"
-        type="checkbox"
-        @click="toggleState = !toggleState"
+      :id="id"
+      :name="name"
+      v-model="toggleState"
+      class="toggle"
+      type="checkbox"
+      @click="toggleState = !toggleState"
     />
     <label :for="id" class="toggler" :style="[toggleState && {'background': activeColor}]"/>
     <span class="title" v-text="title" @click="toggleState = !toggleState"/>
