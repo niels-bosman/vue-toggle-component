@@ -1,21 +1,20 @@
 <template>
   <section class="wrapper" :title="title">
-    <input :id="id" :name="name" v-model="toggled" class="toggle" type="checkbox" @click="toggled = !toggled" />
-    <label :for="id" class="toggler" />
-    <span class="title" v-text="title" @click="toggled = !toggled" />
+    <input :id="id" :name="name" v-model="toggled" class="toggle" type="checkbox" @click="toggled = !toggled"/>
+    <label :for="id" class="toggler"/>
+    <span class="title" v-text="title" @click="toggled = !toggled"/>
   </section>
 </template>
 
 <script>
-
 export default {
   name: 'VueToggle',
 
   props: {
-    id:      { type: String, required: true },
-    name:    { type: [String, Boolean], default: false },
-    title:   { type: String, required: true },
-    toggled: { type: Boolean, default: false },
+    id: {type: String, required: true},
+    name: {type: [String, Boolean], default: false},
+    title: {type: String, required: true},
+    toggled: {type: Boolean, default: false},
   },
 }
 </script>

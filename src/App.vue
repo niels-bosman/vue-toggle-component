@@ -1,14 +1,13 @@
 <template>
-  <div id="app">
-    <vue-toggle title="Toggle me" id="1" />
-  </div>
+  <VueToggle title="Toggle me" id="1"/>
 </template>
 
 <script>
-import VueToggle from "@vue-toggle-component";
+import VueToggle from "./components/VueToggle";
 
 export default {
-  name:       'App',
-  components: { VueToggle },
+  name: 'App',
+  components: {VueToggle}
 }
+
 </script>
