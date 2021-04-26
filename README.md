@@ -1,10 +1,14 @@
-vue-toggle-components makes an ease to use, lightweight and highly customizable toggle component for [Vue.js](https://vuejs.org/).
+vue-toggle-components makes an ease to use, lightweight and highly customizable toggle component for [Vue.js](https://vuejs.org/). This component is available in both light and dark mode and it supports Vue 3.
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-toggle-component)
 ![npm](https://img.shields.io/npm/dt/vue-toggle-component)
 ![GitHub issues](https://img.shields.io/github/issues/niels-bosman/vue-toggle-component)
 ![npm](https://img.shields.io/npm/v/vue-toggle-component)
 ![GitHub Repo stars](https://img.shields.io/github/stars/niels-bosman/vue-toggle-component?style=social)
+
+
+![Light theme](https://user-images.githubusercontent.com/25898715/116152862-c273f400-a6e6-11eb-8b4d-1017b92d14a5.gif)
+![Dark theme](https://user-images.githubusercontent.com/25898715/116152879-c7d13e80-a6e6-11eb-87b3-9b606184ba1e.gif)
 
 ![DEMO](https://user-images.githubusercontent.com/25898715/113936516-26964d00-97f8-11eb-850d-7cc74690ccf6.gif)
 ## Getting Started
@@ -30,7 +34,7 @@ The main v2 version supports Vue 3.x only, for previous versions of Vue, check t
 
 | vue Version | vue-toggle-component version |
 | ----------- | ---------------------------- |
-| `2.x`       | `0.1.x`                        |
+| `2.x`       | `0.1.x`                      |
 | `3.x`       | `1.x`                        |
 
 ### Usage
