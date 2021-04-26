@@ -1,4 +1,4 @@
-This is a project that makes it easier to use a (checkbox) toggle component that's modern.
+vue-toggle-components makes an ease to use, lightweight and highly customizable toggle component for [Vue.js](https://vuejs.org/).
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/vue-toggle-component)
 ![npm](https://img.shields.io/npm/dt/vue-toggle-component)
