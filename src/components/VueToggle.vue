@@ -1,8 +1,15 @@
 <template>
-  <section class="wrapper" v-bind:class="{dark: darkTheme}" :title="title">
-    <input :id="id" :name="name" v-model="toggled" class="toggle" type="checkbox" @click="toggled = !toggled"/>
-    <label :for="id" class="toggler"/>
-    <span class="title" v-text="title" @click="toggled = !toggled"/>
+  <section class="wrapper" :class="{dark: darkTheme}" :title="title">
+    <input
+        :id="id"
+        :name="name"
+        v-model="toggleState"
+        class="toggle"
+        type="checkbox"
+        @click="toggleState = !toggleState"
+    />
+    <label :for="id" class="toggler" :style="[toggleState && {'background': activeColor}]"/>
+    <span class="title" v-text="title" @click="toggleState = !toggleState"/>
   </section>
 </template>
 
@@ -11,11 +18,18 @@ export default {
   name: 'VueToggle',
 
   props: {
+    activeColor: {type: String, default: '#9FD6AE'},
+    darkTheme: {type: Boolean, default: false},
     id: {type: String, required: true},
     name: {type: [String, Boolean], default: false},
     title: {type: String, required: true},
     toggled: {type: Boolean, default: false},
-    darkTheme: {type: Boolean, default: false}
+  },
+
+  data() {
+    return {
+      toggleState: this.toggled
+    }
   },
 }
 </script>
@@ -93,8 +107,6 @@ export default {
 
   &:checked {
     & + .toggler {
-      background: #9FD6AE;
-
       &:after {
         left: 50%;
       }
