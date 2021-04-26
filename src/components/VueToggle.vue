@@ -1,5 +1,5 @@
 <template>
-  <section class="wrapper" :title="title">
+  <section class="wrapper" v-bind:class="{dark: darkTheme}" :title="title">
     <input :id="id" :name="name" v-model="toggled" class="toggle" type="checkbox" @click="toggled = !toggled"/>
     <label :for="id" class="toggler"/>
     <span class="title" v-text="title" @click="toggled = !toggled"/>
@@ -15,6 +15,7 @@ export default {
     name: {type: [String, Boolean], default: false},
     title: {type: String, required: true},
     toggled: {type: Boolean, default: false},
+    darkTheme: {type: Boolean, default: false}
   },
 }
 </script>
@@ -40,6 +41,10 @@ export default {
 
   &::selection {
     background: none;
+  }
+
+  .dark & {
+    color: white;
   }
 }
 
@@ -79,6 +84,10 @@ export default {
       transition: left .2s ease;
       width: 50%;
       will-change: left;
+    }
+
+    .dark & {
+      background: #374151;
     }
   }
 
