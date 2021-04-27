@@ -6,13 +6,11 @@ vue-toggle-component makes an ease to use, lightweight and highly customizable t
 ![npm](https://img.shields.io/npm/v/vue-toggle-component)
 ![GitHub Repo stars](https://img.shields.io/github/stars/niels-bosman/vue-toggle-component?style=social)
 
-
 ![Light theme](https://user-images.githubusercontent.com/25898715/116152862-c273f400-a6e6-11eb-8b4d-1017b92d14a5.gif)
 ![Dark theme](https://user-images.githubusercontent.com/25898715/116152879-c7d13e80-a6e6-11eb-87b3-9b606184ba1e.gif)
+
 ## Getting Started
-
 ### Installation
-
 #### Installing the package
 ```sh
 # install with yarn
@@ -21,7 +19,6 @@ yarn add vue-toggle-component
 # install with npm
 npm install vue-toggle-component --save
 ```
-
 
 ### Usage
 #### Example
@@ -53,27 +50,23 @@ export default {
 | toggled       | `Boolean` | `true`    | -        | Sets the default value for the toggler.                                                            |
 
 ### Vue version support
-
 The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
 
 | Vue version | vue-toggle-component version |
 | ----------- | ---------------------------- |
 | `2.x`       | `0.1.x`                      |
 | `3.x`       | `1.x`                        |
+
 ### Authors
-
 #### Niels Bosman
-
 www.github.com/niels-bosman
 
 https://nielsbosman.dev
 
 #### Mike van Egmond
-
 www.github.com/mve
 
 https://egmond.dev
 
 ### License
-
 MIT
