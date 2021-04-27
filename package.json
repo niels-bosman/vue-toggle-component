@@ -1,14 +1,17 @@
 {
   "name": "vue-toggle-component",
-  "version": "1.0.1",
+  "version": "1.0.3",
+  "main" : "dist/vue-toggle-component.common.js",
+  "files": ["dist/*"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-library": "vue-cli-service build --target lib --name vue-toggle-component ./src/install.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "sass": "^1.32.11",
-    "sass-loader": "^11.0.1",
+    "sass-loader": "^10.1.1",
     "vue": "^3.0.11"
   },
   "devDependencies": {
@@ -40,7 +43,6 @@
     "not dead"
   ],
   "description": "vue-toggle-component makes an ease to use, lightweight and highly customizable toggle component for Vue.js.",
-  "main": "babel.config.js",
   "repository": "git+https://github.com/niels-bosman/vue-toggle-component.git",
   "keywords": [
     "Vue.js",
