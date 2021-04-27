@@ -48,7 +48,7 @@ export default {
 | name          | `String`  | -         | X        | Set's the name value of the input (checkbox). Useful for persisting data.                          |
 | title         | `String`  | -         | X        | The title that is displayed next to the toggle.                                                    |
 | activeColor   | `String`  | `#9FD6AE` | -        | The color that is displayed when the toggler is active.                                            |
-| darkTheme     | `Boolean` | `false`   | -        | Set's dark mode to active. (note that this will not change the background like in the preview GIF. |
+| darkTheme     | `Boolean` | `false`   | -        | Set's dark mode to active. (note that this will not change the background like in the preview GIF) |
 | disabled      | `Boolean` | `false`   | -        | Disables the toggler.                                                                              |
 | toggled       | `Boolean` | `true`    | -        | Sets the default value for the toggler.                                                            |
 
