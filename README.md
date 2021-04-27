@@ -28,7 +28,7 @@ import VueToggle from "@vue-toggle-component";
 ```
 ### Vue version support
 
-The main v2 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
+The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
 
 | vue Version | vue-toggle-component version |
 | ----------- | ---------------------------- |
