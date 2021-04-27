@@ -24,30 +24,30 @@ npm install vue-toggle-component --save
 #### Example
 ```html
 <template>
-  <VueToggle title="Toggle me" name="VueToggle"/>
+    <VueToggle title="Toggle me" name="VueToggle"/>
 </template>
 
 <script>
-import VueToggle from "vue-toggle-component";
+    import VueToggle from "vue-toggle-component";
 
-export default {
-  name: 'App',
-  components: {
-    VueToggle
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            VueToggle
+        }
+    }
 </script>
 ```
 
 #### Properties that vue-toggle-component uses
 | Property name | Type      | Default   | Required |Description                                                                                         |
 | ------------- | --------- | --------- | -------- | -------------------------------------------------------------------------------------------------- |
-| name          | `String`  | -         | X        | Set's the name value of the input (checkbox). Useful for persisting data.                          |
-| title         | `String`  | -         | X        | The title that is displayed next to the toggle.                                                    |
-| activeColor   | `String`  | `#9FD6AE` | -        | The color that is displayed when the toggler is active.                                            |
-| darkTheme     | `Boolean` | `false`   | -        | Set's dark mode to active. (note that this will not change the background like in the preview GIF) |
-| disabled      | `Boolean` | `false`   | -        | Disables the toggler.                                                                              |
-| toggled       | `Boolean` | `true`    | -        | Sets the default value for the toggler.                                                            |
+| name          | `String`  | ❌         | ✅️        | Set's the name value of the input (checkbox). Useful for persisting data.                          |
+| title         | `String`  | ❌         | ✅        | The title that is displayed next to the toggle.                                                    |
+| activeColor   | `String`  | `#9FD6AE` | ❌        | The color that is displayed when the toggler is active.                                            |
+| darkTheme     | `Boolean` | `false`   | ❌        | Set's dark mode to active. (note that this will not change the background like in the preview GIF) |
+| disabled      | `Boolean` | `false`   | ❌        | Disables the toggler.                                                                              |
+| toggled       | `Boolean` | `true`    | ❌        | Sets the default value for the toggler.                                                            |
 
 ### Vue version support
 The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
