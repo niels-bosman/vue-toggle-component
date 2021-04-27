@@ -1,11 +1,7 @@
-const path = require('path')
-
 module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@vue-toggle-component': path.resolve(__dirname, 'src/components/VueToggle')
-      }
-    }
+  chainWebpack: webpackConfig => {
+    webpackConfig.module.rule('vue').uses.delete('cache-loader')
+    webpackConfig.module.rule('js').uses.delete('cache-loader')
+    webpackConfig.module.rule('ts').uses.delete('cache-loader')
   }
 }
