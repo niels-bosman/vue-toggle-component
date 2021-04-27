@@ -1,15 +1,16 @@
 <template>
-  <section class="wrapper" :class="{dark: darkTheme}" :title="title">
+  <section :class="{'dark': darkTheme, 'disabled': disabled}" :title="title" class="wrapper">
     <input
-      :id="id"
-      :name="name"
+      :id="`_${name}`"
       v-model="toggleState"
+      :disabled="disabled"
+      :name="name"
       class="toggle"
       type="checkbox"
       @click="toggleState = !toggleState"
     />
-    <label :for="id" class="toggler" :style="[toggleState && {'background': activeColor}]"/>
-    <span class="title" v-text="title" @click="toggleState = !toggleState"/>
+    <label :for="name" :style="[toggleState && {'background': activeColor}]" class="toggler"/>
+    <span class="title" @click="toggleState = !toggleState" v-text="title"/>
   </section>
 </template>
 
@@ -20,8 +21,8 @@ export default {
   props: {
     activeColor: {type: String, default: '#9FD6AE'},
     darkTheme: {type: Boolean, default: false},
-    id: {type: String, required: true},
-    name: {type: [String, Boolean], default: false},
+    disabled: {type: Boolean, default: false },
+    name: {type: String, required: true},
     title: {type: String, required: true},
     toggled: {type: Boolean, default: false},
   },
@@ -98,6 +99,14 @@ export default {
       transition: left .2s ease;
       width: 50%;
       will-change: left;
+    }
+
+    .disabled & {
+      opacity: 50%;
+
+      &:hover {
+        cursor: not-allowed;
+      }
     }
 
     .dark & {

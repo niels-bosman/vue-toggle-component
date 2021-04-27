@@ -31,7 +31,7 @@ npm install vue-toggle-component --save
 </template>
 
 <script>
-import VueToggle from "./components/VueToggle";
+import VueToggle from "vue-toggle-component";
 
 export default {
   name: 'App',
@@ -43,20 +43,20 @@ export default {
 ```
 
 #### Properties that vue-toggle-component uses
-| Property name | Description                  |
-| ------------- | ---------------------------- |
-| `activeColor` | The active color the checked toggler uses. This is a hex code. Default: `#9FD6AE` |
-| `darkTheme`   | Give this prop to the component to use the dark mode feature as shown in the GIF above. |
-| `id`          | The ID the input and the label use in the component. |
-| `name`        | The name attributes that will be set in the input. |
-| `title`       | The title that is shown after the toggler itself. |
-| `toggled`     | The value the toggler has by default, by default this is `false` |
+| Property name | Type      | Default   | Required |Description                                                                                         |
+| ------------- | --------- | --------- | -------- | -------------------------------------------------------------------------------------------------- |
+| name          | `String`  | -         | X        | Set's the name value of the input (checkbox). Useful for persisting data.                          |
+| title         | `String`  | -         | X        | The title that is displayed next to the toggle.                                                    |
+| activeColor   | `String`  | `#9FD6AE` | -        | The color that is displayed when the toggler is active.                                            |
+| darkTheme     | `Boolean` | `false`   | -        | Set's dark mode to active. (note that this will not change the background like in the preview GIF. |
+| disabled      | `Boolean` | `false`   | -        | Disables the toggler.                                                                              |
+| toggled       | `Boolean` | `true`    | -        | Sets the default value for the toggler.                                                            |
 
 ### Vue version support
 
 The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
 
-| vue Version | vue-toggle-component version |
+| Vue version | vue-toggle-component version |
 | ----------- | ---------------------------- |
 | `2.x`       | `0.1.x`                      |
 | `3.x`       | `1.x`                        |
