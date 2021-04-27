@@ -1,5 +1,9 @@
 <template>
-  <section :class="{'dark': darkTheme, 'disabled': disabled}" :title="title" class="wrapper">
+  <section
+      :class="{'dark': darkTheme, 'disabled': disabled}"
+      :title="title"
+      class="wrapper"
+  >
     <input
       :id="`_${name}`"
       v-model="toggleState"
@@ -7,10 +11,14 @@
       :name="name"
       class="toggle"
       type="checkbox"
-      @click="toggleState = !toggleState"
     />
-    <label :for="name" :style="[toggleState && {'background': activeColor}]" class="toggler"/>
-    <span class="title" @click="toggleState = !toggleState" v-text="title"/>
+    <label
+        :for="name"
+        :style="[toggleState && {'background': activeColor}]"
+        class="toggler"
+        @click="toggle"
+    />
+    <span class="title" @click="toggle">{{title}}</span>
   </section>
 </template>
 
@@ -30,6 +38,13 @@ export default {
   data() {
     return {
       toggleState: this.toggled
+    }
+  },
+
+  methods: {
+    toggle() {
+      if (this.disabled) return;
+      this.toggleState = !this.toggleState
     }
   },
 }
@@ -56,6 +71,12 @@ export default {
 
   &::selection {
     background: none;
+  }
+
+  .disabled & {
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 
   .dark & {
