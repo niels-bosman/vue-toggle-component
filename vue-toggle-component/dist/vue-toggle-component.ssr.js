@@ -66,13 +66,13 @@ function _nonIterableRest() {
       type: Boolean,
       default: false
     },
-    id: {
-      type: String,
-      required: true
+    disabled: {
+      type: Boolean,
+      default: false
     },
     name: {
-      type: [String, Boolean],
-      default: false
+      type: String,
+      required: true
     },
     title: {
       type: String,
@@ -87,39 +87,46 @@ function _nonIterableRest() {
     return {
       toggleState: this.toggled
     };
+  },
+  methods: {
+    toggle: function toggle() {
+      if (this.disabled) return;
+      this.toggleState = !this.toggleState;
+    }
   }
-};var _withId = /*#__PURE__*/vue.withScopeId("data-v-121077f4");
+};var _withId = /*#__PURE__*/vue.withScopeId("data-v-84279cda");
 
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("section", {
-    class: ["wrapper", {
-      dark: $props.darkTheme
-    }],
+    class: [{
+      'dark': $props.darkTheme,
+      'disabled': $props.disabled
+    }, "wrapper"],
     title: $props.title
   }, [vue.withDirectives(vue.createVNode("input", {
-    id: $props.id,
-    name: $props.name,
+    id: "_".concat($props.name),
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.toggleState = $event;
     }),
+    disabled: $props.disabled,
+    name: $props.name,
     class: "toggle",
-    type: "checkbox",
-    onClick: _cache[2] || (_cache[2] = function ($event) {
-      return $data.toggleState = !$data.toggleState;
-    })
-  }, null, 8, ["id", "name"]), [[vue.vModelCheckbox, $data.toggleState]]), vue.createVNode("label", {
-    for: $props.id,
-    class: "toggler",
+    type: "checkbox"
+  }, null, 8, ["id", "disabled", "name"]), [[vue.vModelCheckbox, $data.toggleState]]), vue.createVNode("label", {
+    for: $props.name,
     style: [$data.toggleState && {
       'background': $props.activeColor
-    }]
+    }],
+    class: "toggler",
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.toggle && $options.toggle.apply($options, arguments);
+    })
   }, null, 12, ["for"]), vue.createVNode("span", {
     class: "title",
-    textContent: vue.toDisplayString($props.title),
-    onClick: _cache[3] || (_cache[3] = function ($event) {
-      return $data.toggleState = !$data.toggleState;
+    onClick: _cache[3] || (_cache[3] = function () {
+      return $options.toggle && $options.toggle.apply($options, arguments);
     })
-  }, null, 8, ["textContent"])], 10, ["title"]);
+  }, vue.toDisplayString($props.title), 1)], 10, ["title"]);
 });function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -145,9 +152,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z = "\n.wrapper[data-v-121077f4] {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 5px;\n}\n.wrapper > *[data-v-121077f4] {\n  cursor: pointer;\n  margin: 0 5px;\n}\n.title[data-v-121077f4] {\n  display: inline-block;\n  font-weight: 700;\n  line-height: 2em;\n  vertical-align: middle;\n}\n.title[data-v-121077f4]::selection {\n  background: none;\n}\n.dark .title[data-v-121077f4] {\n  color: white;\n}\n.toggle[data-v-121077f4] {\n  display: none;\n}\n.toggle[data-v-121077f4]:after, .toggle + .toggler[data-v-121077f4] {\n  box-sizing: border-box;\n}\n.toggle[data-v-121077f4]:after::selection, .toggle + .toggler[data-v-121077f4]::selection {\n  background: none;\n}\n.toggle + .toggler[data-v-121077f4] {\n  background: #f0f0f0;\n  border-radius: 2em;\n  display: block;\n  height: 2em;\n  outline: 0;\n  padding: 2px;\n  position: relative;\n  transition: background 0.4s ease;\n  user-select: none;\n  width: 4em;\n  will-change: background;\n}\n.toggle + .toggler[data-v-121077f4]:after {\n  background: white;\n  border-radius: 50%;\n  content: \"\";\n  display: block;\n  height: 100%;\n  left: 0;\n  position: relative;\n  transition: left 0.2s ease;\n  width: 50%;\n  will-change: left;\n}\n.dark .toggle + .toggler[data-v-121077f4] {\n  background: #374151;\n}\n.toggle:checked + .toggler[data-v-121077f4]:after {\n  left: 50%;\n}\n";
+}var css_248z = "\n.wrapper[data-v-84279cda] {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 5px;\n}\n.wrapper > *[data-v-84279cda] {\n  cursor: pointer;\n  margin: 0 5px;\n}\n.title[data-v-84279cda] {\n  display: inline-block;\n  font-weight: 700;\n  line-height: 2em;\n  vertical-align: middle;\n}\n.title[data-v-84279cda]::selection {\n  background: none;\n}\n.disabled .title[data-v-84279cda]:hover {\n  cursor: not-allowed;\n}\n.dark .title[data-v-84279cda] {\n  color: white;\n}\n.toggle[data-v-84279cda] {\n  display: none;\n}\n.toggle[data-v-84279cda]:after, .toggle + .toggler[data-v-84279cda] {\n  box-sizing: border-box;\n}\n.toggle[data-v-84279cda]:after::selection, .toggle + .toggler[data-v-84279cda]::selection {\n  background: none;\n}\n.toggle + .toggler[data-v-84279cda] {\n  background: #f0f0f0;\n  border-radius: 2em;\n  display: block;\n  height: 2em;\n  outline: 0;\n  padding: 2px;\n  position: relative;\n  transition: background 0.4s ease;\n  user-select: none;\n  width: 4em;\n  will-change: background;\n}\n.toggle + .toggler[data-v-84279cda]:after {\n  background: white;\n  border-radius: 50%;\n  content: \"\";\n  display: block;\n  height: 100%;\n  left: 0;\n  position: relative;\n  transition: left 0.2s ease;\n  width: 50%;\n  will-change: left;\n}\n.disabled .toggle + .toggler[data-v-84279cda] {\n  opacity: 50%;\n}\n.disabled .toggle + .toggler[data-v-84279cda]:hover {\n  cursor: not-allowed;\n}\n.dark .toggle + .toggler[data-v-84279cda] {\n  background: #374151;\n}\n.toggle:checked + .toggler[data-v-84279cda]:after {\n  left: 50%;\n}\n\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-121077f4";// Import vue component
+script.__scopeId = "data-v-84279cda";// Import vue component
 // IIFE injects install function into component, allowing component
 // to be registered via Vue.use() as well as Vue.component(),
 
