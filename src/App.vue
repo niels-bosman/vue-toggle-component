@@ -11,5 +11,4 @@ export default {
     VueToggle
   }
 }
-
 </script>

@@ -22,11 +22,6 @@ yarn add vue-toggle-component
 npm install vue-toggle-component --save
 ```
 
-#### Importing the package in your Vue application
-```javascript
-import VueToggle from 'vue-toggle-component';
-```
-
 
 ### Usage
 #### Example
@@ -34,7 +29,29 @@ import VueToggle from 'vue-toggle-component';
 <template>
   <VueToggle title="Toggle me" id="1"/>
 </template>
+
+<script>
+import VueToggle from "./components/VueToggle";
+
+export default {
+  name: 'App',
+  components: {
+    VueToggle
+  }
+}
+</script>
 ```
+
+#### Properties that vue-toggle-component uses
+| Property name | Description                  |
+| ------------- | ---------------------------- |
+| `activeColor` | The active color the checked toggler uses. This is a hex code. Default: `#9FD6AE` |
+| `darkTheme`   | Give this prop to the component to use the dark mode feature as shown in the GIF above. |
+| `id`          | The ID the input and the label use in the component. |
+| `name`        | The name attributes that will be set in the input. |
+| `title`       | The title that is shown after the toggler itself. |
+| `toggled`     | The value the toggler has by default, by default this is `false` |
+
 ### Vue version support
 
 The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
