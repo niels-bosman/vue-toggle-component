@@ -1,5 +1,5 @@
 <template>
-  <VueToggle title="Toggle me" id="1"/>
+  <VueToggle title="Toggle me" name="VueToggle"/>
 </template>
 
 <script>
