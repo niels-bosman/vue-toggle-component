@@ -26,14 +26,7 @@ npm install vue-toggle-component --save
 ```javascript
 import VueToggle from 'vue-toggle-component';
 ```
-### Vue version support
 
-The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
-
-| vue Version | vue-toggle-component version |
-| ----------- | ---------------------------- |
-| `2.x`       | `0.1.x`                      |
-| `3.x`       | `1.x`                        |
 
 ### Usage
 #### Example
@@ -42,7 +35,14 @@ The main v1 version supports Vue 3.x only, for previous versions of Vue, check t
   <VueToggle title="Toggle me" id="1"/>
 </template>
 ```
+### Vue version support
 
+The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.
+
+| vue Version | vue-toggle-component version |
+| ----------- | ---------------------------- |
+| `2.x`       | `0.1.x`                      |
+| `3.x`       | `1.x`                        |
 ### Authors
 
 #### Niels Bosman
