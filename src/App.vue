@@ -7,7 +7,9 @@ import VueToggle from "./components/VueToggle";
 
 export default {
   name: 'App',
-  components: {VueToggle}
+  components: {
+    VueToggle
+  }
 }
 
 </script>
