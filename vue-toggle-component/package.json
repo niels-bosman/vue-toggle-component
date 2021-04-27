@@ -1,6 +1,6 @@
 {
   "name": "vue-toggle-component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
 
   "main": "dist/vue-toggle-component.ssr.js",
