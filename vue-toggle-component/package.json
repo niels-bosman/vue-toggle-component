@@ -1,7 +1,6 @@
 {
   "name": "vue-toggle-component",
-  "version": "1.0.8",
-  "description": "",
+  "version": "1.0.9",
 
   "main": "dist/vue-toggle-component.ssr.js",
   "browser": "dist/vue-toggle-component.esm.js",
@@ -50,5 +49,20 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "description": "vue-toggle-component makes an ease to use, lightweight and highly customizable toggle component for Vue.js.",
+  "repository": "git+https://github.com/niels-bosman/vue-toggle-component.git",
+  "keywords": [
+    "Vue.js",
+    "Toggle",
+    "Component",
+    "Lightweight",
+    "Checkbox"
+  ],
+  "author": "Niels Bosman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niels-bosman/vue-toggle-component/issues"
+  },
+  "homepage": "https://github.com/niels-bosman/vue-toggle-component#readme"
 }
