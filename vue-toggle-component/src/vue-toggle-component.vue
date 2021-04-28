@@ -8,7 +8,7 @@
       :id="`_${name}`"
       v-model="toggleState"
       :aria-checked="toggleState"
-      :aria-readonly="!toggleState"
+      :aria-readonly="disabled"
       :disabled="disabled"
       :name="name"
       class="toggle"
