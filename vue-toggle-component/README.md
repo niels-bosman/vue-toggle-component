@@ -24,18 +24,18 @@ npm install vue-toggle-component --save
 #### Example
 ```html
 <template>
-    <VueToggle title="Toggle me" name="VueToggle"/>
+  <VueToggle title="Toggle me" name="VueToggle"/>
 </template>
 
 <script>
-    import VueToggle from "vue-toggle-component";
+import VueToggle from "vue-toggle-component";
 
-    export default {
-        name: 'App',
-        components: {
-            VueToggle
-        }
-    }
+export default {
+  name: 'App',
+  components: {
+    VueToggle
+  }
+}
 </script>
 ```
 
@@ -46,7 +46,9 @@ npm install vue-toggle-component --save
 | title         | `String`  | ❌         | ✅        | The title that is displayed next to the toggle.                                                    |
 | activeColor   | `String`  | `#9FD6AE` | ❌        | The color that is displayed when the toggler is active.                                            |
 | darkTheme     | `Boolean` | `false`   | ❌        | Set's dark mode to active. (note that this will not change the background like in the preview GIF) |
-| disabled      | `Boolean` | `false`   | ❌        | Disables the toggler.                                                                              |
+| disabled      | `Number`  | `false`   | ❌        | Disables the toggler.                                                                              |
+| fontSize      | `String`  | `16`      | ❌        | Sets the font size of the text next to the toggle                                                  |
+| fontWeight    | `Boolean` | `bold`    | ❌        | Sets the font weight of the text next to the toggle.                                               |
 | toggled       | `Boolean` | `true`    | ❌        | Sets the default value for the toggler.                                                            |
 
 ### Vue version support

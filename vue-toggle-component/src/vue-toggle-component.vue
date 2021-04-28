@@ -1,24 +1,33 @@
 <template>
   <section
-      :class="{'dark': darkTheme, 'disabled': disabled}"
-      :title="title"
-      class="wrapper"
+    :class="{'dark': darkTheme, 'disabled': disabled}"
+    :title="title"
+    class="wrapper"
   >
     <input
-        :id="`_${name}`"
-        v-model="toggleState"
-        :disabled="disabled"
-        :name="name"
-        class="toggle"
-        type="checkbox"
+      :id="`_${name}`"
+      v-model="toggleState"
+      :aria-checked="toggleState"
+      :aria-readonly="!toggleState"
+      :disabled="disabled"
+      :name="name"
+      class="toggle"
+      role="checkbox"
+      type="checkbox"
     />
     <label
-        :for="name"
-        :style="[toggleState && {'background': activeColor}]"
-        class="toggler"
-        @click="toggle"
+      :for="name"
+      :style="[toggleState && {background: activeColor}]"
+      class="toggler"
+      @click="toggle"
     />
-    <span class="title" @click="toggle">{{title}}</span>
+    <span
+      class="title"
+      @click="toggle"
+      :style="[{fontSize, fontWeight}]"
+    >
+      {{title}}
+    </span>
   </section>
 </template>
 
@@ -28,11 +37,13 @@ export default {
 
   props: {
     activeColor: {type: String, default: '#9FD6AE'},
-    darkTheme: {type: Boolean, default: false},
-    disabled: {type: Boolean, default: false },
-    name: {type: String, required: true},
-    title: {type: String, required: true},
-    toggled: {type: Boolean, default: false},
+    darkTheme:   {type: Boolean, default: false},
+    disabled:    {type: Boolean, default: false },
+    fontSize:    {type: Number, default: 16},
+    fontWeight:  {type: String, default: 'bold'},
+    name:        {type: String, required: true},
+    title:       {type: String, required: true},
+    toggled:     {type: Boolean, default: false},
   },
 
   data() {
@@ -62,7 +73,6 @@ export default {
 }
 .title {
   display: inline-block;
-  font-weight: 700;
   line-height: 2em;
   vertical-align: middle;
 }
