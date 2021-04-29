@@ -48,7 +48,7 @@ export default {
 | darkTheme     | `Boolean` | `false`   | ❌        | Set's dark mode to active. (note that this will not change the background like in the preview GIF) |
 | disabled      | `Number`  | `false`   | ❌        | Disables the toggler.                                                                              |
 | fontSize      | `String`  | `16`      | ❌        | Sets the font size of the text next to the toggle                                                  |
-| fontWeight    | `Boolean` | `bold`    | ❌        | Sets the font weight of the text next to the toggle.                                               |
+| fontWeight    | `Boolean` | `normal`  | ❌        | Sets the font weight of the text next to the toggle.                                               |
 | toggled       | `Boolean` | `true`    | ❌        | Sets the default value for the toggler.                                                            |
 
 ### Vue version support
