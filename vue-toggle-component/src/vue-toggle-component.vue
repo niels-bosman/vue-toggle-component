@@ -16,12 +16,12 @@
     <label
         :for="id"
         :style="toggleState && {background: activeColor}"
-        class="toggler"
+        class="toggle__content"
     />
     <label
         :for="id"
         :style="[{fontSize, fontWeight}]"
-        class="title"
+        class="toggle__label"
     >
       {{title}}
     </label>
@@ -67,30 +67,30 @@ section {
   cursor: pointer;
   margin: 0 5px;
 }
-.title {
+.toggle__label {
   display: inline-block;
   line-height: 2em;
   vertical-align: middle;
 }
-.title::selection {
+.toggle__label::selection {
   background: none;
 }
-.disabled .title:hover {
+.disabled .toggle__label:hover {
   cursor: not-allowed;
 }
-.dark .title {
+.dark .toggle__label {
   color: white;
 }
 input {
   display: none;
 }
-input:after, .toggle + .toggler {
+input:after, .toggle + .toggle__content {
   box-sizing: border-box;
 }
-input:after::selection, .toggle + .toggler::selection {
+input:after::selection, .toggle + .toggle__content::selection {
   background: none;
 }
-input + .toggler {
+input + .toggle__content {
   background: #f0f0f0;
   border-radius: 2em;
   display: block;
@@ -103,7 +103,7 @@ input + .toggler {
   width: 4em;
   will-change: background;
 }
-.toggle + .toggler:after {
+.toggle + .toggle__content:after {
   background: white;
   border-radius: 50%;
   content: "";
@@ -115,16 +115,16 @@ input + .toggler {
   width: 50%;
   will-change: left;
 }
-.disabled .toggle + .toggler {
+.disabled .toggle + .toggle__content {
   opacity: 50%;
 }
-.disabled .toggle + .toggler:hover {
+.disabled .toggle + .toggle__content:hover {
   cursor: not-allowed;
 }
-.dark .toggle + .toggler {
+.dark .toggle + .toggle__content {
   background: #374151;
 }
-.toggle:checked + .toggler:after {
+.toggle:checked + .toggle__content:after {
   left: 50%;
 }
 

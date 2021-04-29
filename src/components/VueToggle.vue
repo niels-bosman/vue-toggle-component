@@ -1,27 +1,29 @@
 <template>
   <section
     :class="{'dark': darkTheme, disabled}"
-    :title="title"
+    class="m-toggle"
   >
     <input
       :id="id"
       v-model="toggleState"
-      :aria-checked="toggleState"
-      :aria-readonly="disabled"
       :disabled="disabled"
       :name="name"
-      role="checkbox"
+      class="m-toggle__input"
       type="checkbox"
     />
-    <label
-      :for="id"
+    <span
+      :aria-checked="toggleState"
+      :aria-disabled="disabled"
+      :aria-readonly="disabled"
       :style="toggleState && {background: activeColor}"
-      class="toggler"
+      class="m-toggle__content"
+      role="checkbox"
+      @click="toggleState = !toggleState"
     />
     <label
       :for="id"
-      :style="[{fontSize, fontWeight}]"
-      class="title"
+      :style="[{fontSize: `${fontSize}px`, fontWeight}]"
+      class="m-toggle__label"
     >
       {{title}}
     </label>
@@ -37,7 +39,7 @@ export default {
     darkTheme:   {type: Boolean, default: false},
     disabled:    {type: Boolean, default: false },
     fontSize:    {type: Number, default: 16},
-    fontWeight:  {type: String, default: 'bold'},
+    fontWeight:  {type: String, default: 'normal'},
     name:        {type: String, required: true},
     title:       {type: String, required: true},
     toggled:     {type: Boolean, default: false},
@@ -58,68 +60,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-section {
+.m-toggle {
   display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
+  align-items: center;
+  margin: 0 -5px;
 
   > * {
     cursor: pointer;
     margin: 0 5px;
   }
-}
 
-.title {
-  display: inline-block;
-  line-height: 2em;
-  vertical-align: middle;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  $self: &;
 
-  &::selection {
-    background: none;
-  }
+  &__label {
+    user-select: none;
 
-  .disabled & {
-    &:hover {
+    .disabled & {
       cursor: not-allowed;
+    }
+
+    .dark & {
+      color: white;
     }
   }
 
-  .dark & {
-    color: white;
+  &__input {
+    display: none;
+
+    &:checked {
+      & + #{$self}__content {
+        &:after {
+          left: 50%;
+        }
+      }
+    }
   }
-}
 
-input {
-  display: none;
-
-  &:after,
-  & + .toggler {
+  &__content {
     box-sizing: border-box;
-  }
-
-  + .toggler {
     background: #F0F0F0;
     border-radius: 2em;
-    display: block;
     height: 2em;
     outline: 0;
     padding: 2px;
-    position: relative;
     transition: background .4s ease;
-    user-select: none;
     width: 4em;
     will-change: background;
 
     &:after {
       background: white;
       border-radius: 50%;
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       left: 0;
@@ -141,14 +132,5 @@ input {
       background: #374151;
     }
   }
-
-  &:checked {
-    & + .toggler {
-      &:after {
-        left: 50%;
-      }
-    }
-  }
 }
-
 </style>
