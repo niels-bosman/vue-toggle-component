@@ -1,33 +1,30 @@
 <template>
   <section
-    :class="{'dark': darkTheme, 'disabled': disabled}"
+    :class="{'dark': darkTheme, disabled}"
     :title="title"
-    class="wrapper"
   >
     <input
-      :id="`_${name}`"
+      :id="id"
       v-model="toggleState"
       :aria-checked="toggleState"
       :aria-readonly="disabled"
       :disabled="disabled"
       :name="name"
-      class="toggle"
       role="checkbox"
       type="checkbox"
     />
     <label
-      :for="name"
-      :style="[toggleState && {background: activeColor}]"
+      :for="id"
+      :style="toggleState && {background: activeColor}"
       class="toggler"
-      @click="toggle"
     />
-    <span
-      class="title"
-      @click="toggle"
+    <label
+      :for="id"
       :style="[{fontSize, fontWeight}]"
+      class="title"
     >
       {{title}}
-    </span>
+    </label>
   </section>
 </template>
 
@@ -52,10 +49,9 @@ export default {
     }
   },
 
-  methods: {
-    toggle() {
-      if (this.disabled) return;
-      this.toggleState = !this.toggleState
+  computed: {
+    id() {
+      return `_${this.name.replace(/ /g, '').toLowerCase()}`;
     }
   },
 }
@@ -63,7 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.wrapper {
+section {
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
@@ -78,6 +74,11 @@ export default {
   display: inline-block;
   line-height: 2em;
   vertical-align: middle;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &::selection {
     background: none;
@@ -94,16 +95,12 @@ export default {
   }
 }
 
-.toggle {
+input {
   display: none;
 
   &:after,
   & + .toggler {
     box-sizing: border-box;
-
-    &::selection {
-      background: none;
-    }
   }
 
   + .toggler {

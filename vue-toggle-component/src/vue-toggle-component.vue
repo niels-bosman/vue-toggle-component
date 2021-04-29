@@ -1,33 +1,30 @@
 <template>
   <section
-    :class="{'dark': darkTheme, 'disabled': disabled}"
-    :title="title"
-    class="wrapper"
+      :class="{'dark': darkTheme, disabled}"
+      :title="title"
   >
     <input
-      :id="`_${name}`"
-      v-model="toggleState"
-      :aria-checked="toggleState"
-      :aria-readonly="disabled"
-      :disabled="disabled"
-      :name="name"
-      class="toggle"
-      role="checkbox"
-      type="checkbox"
+        :id="id"
+        v-model="toggleState"
+        :aria-checked="toggleState"
+        :aria-readonly="disabled"
+        :disabled="disabled"
+        :name="name"
+        role="checkbox"
+        type="checkbox"
     />
     <label
-      :for="name"
-      :style="[toggleState && {background: activeColor}]"
-      class="toggler"
-      @click="toggle"
+        :for="id"
+        :style="toggleState && {background: activeColor}"
+        class="toggler"
     />
-    <span
-      class="title"
-      @click="toggle"
-      :style="[{fontSize, fontWeight}]"
+    <label
+        :for="id"
+        :style="[{fontSize, fontWeight}]"
+        class="title"
     >
       {{title}}
-    </span>
+    </label>
   </section>
 </template>
 
@@ -52,17 +49,16 @@ export default {
     }
   },
 
-  methods: {
-    toggle() {
-      if (this.disabled) return;
-      this.toggleState = !this.toggleState
+  computed: {
+    id() {
+      return `_${this.name.replace(/ /g, '').toLowerCase()}`;
     }
   },
 }
 </script>
 
 <style scoped>
-.wrapper {
+section {
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
@@ -85,16 +81,16 @@ export default {
 .dark .title {
   color: white;
 }
-.toggle {
+input {
   display: none;
 }
-.toggle:after, .toggle + .toggler {
+input:after, .toggle + .toggler {
   box-sizing: border-box;
 }
-.toggle:after::selection, .toggle + .toggler::selection {
+input:after::selection, .toggle + .toggler::selection {
   background: none;
 }
-.toggle + .toggler {
+input + .toggler {
   background: #f0f0f0;
   border-radius: 2em;
   display: block;
