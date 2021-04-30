@@ -9,6 +9,12 @@ vue-toggle-component makes an ease to use, lightweight and highly customizable t
 ![Light theme](https://user-images.githubusercontent.com/25898715/116152862-c273f400-a6e6-11eb-8b4d-1017b92d14a5.gif)
 ![Dark theme](https://user-images.githubusercontent.com/25898715/116152879-c7d13e80-a6e6-11eb-87b3-9b606184ba1e.gif)
 
+## Features
+
+- **🍞 Easy:** Easy use with minimal required properties.
+- **🍤 Tiny:** Small footprint < 4kb which makes your apps faster to load.
+- **✅ Accessible:** ARIA attributes in the component which makes it very accessible.
+
 ## Getting Started
 ### Installation
 #### Installing the package
@@ -50,6 +56,30 @@ export default {
 | fontSize      | `String`  | `16`      | ❌        | Sets the font size of the text next to the toggle                                                  |
 | fontWeight    | `Boolean` | `normal`  | ❌        | Sets the font weight of the text next to the toggle.                                               |
 | toggled       | `Boolean` | `true`    | ❌        | Sets the default value for the toggler.                                                            |
+
+#### Events
+When you toggle the component the component emits the `toggle` event. You can use the event using the example below. The value in the event is the whether the toggler is toggled or not.
+```html
+<template>
+  <VueToggle title="Toggle me" name="VueToggle" @toggle="doSomething"/>
+</template>
+
+<script>
+import VueToggle from "vue-toggle-component";
+
+export default {
+  name: 'App',
+  components: {
+    VueToggle
+  },
+  methods: {
+    doSomething(value) {
+      // value = true || false.
+    }
+  },
+}
+</script>
+```
 
 ### Vue version support
 The main v1 version supports Vue 3.x only, for previous versions of Vue, check the following the table.

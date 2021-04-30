@@ -1,6 +1,6 @@
 {
   "name": "vue-toggle-component",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "dist/vue-toggle-component.common.js",
   "files": [
     "dist/*"

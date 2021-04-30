@@ -1,6 +1,9 @@
 <template>
   <section
-    :class="{'dark': darkTheme, disabled}"
+    :class="{
+      'is-dark': darkTheme,
+      'is-disabled': disabled,
+    }"
     class="m-toggle"
   >
     <input
@@ -14,17 +17,22 @@
     <span
       :aria-checked="toggleState"
       :aria-disabled="disabled"
+      :aria-labelledby="`${id}-label`"
       :aria-readonly="disabled"
-      :aria-labelledby="labelId"
-      :style="toggleState && {background: activeColor}"
+      :style="toggleState && {
+        'background-color': activeColor
+      }"
       class="m-toggle__content"
       role="checkbox"
       @click="toggle"
     />
     <label
-      :id="labelId"
+      :id="`${id}-label`"
       :for="id"
-      :style="[{fontSize: `${fontSize}px`, fontWeight}]"
+      :style="{
+        'font-size': fontSize,
+        'font-weight': fontWeight,
+      }"
       class="m-toggle__label"
     >
       {{ title }}
@@ -40,7 +48,7 @@ export default {
     activeColor: { type: String, default: '#9FD6AE' },
     darkTheme: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
-    fontSize: { type: Number, default: 16 },
+    fontSize: { type: String, default: '16px' },
     fontWeight: { type: String, default: 'normal' },
     name: { type: String, required: true },
     title: { type: String, required: true },
@@ -48,24 +56,20 @@ export default {
   },
 
   data() {
-    return {
-      toggleState: this.toggled
-    }
+    return { toggleState: this.toggled }
   },
 
   methods: {
     toggle() {
       if (this.disabled) return;
-      this.toggleState = !this.toggleState
+      this.toggleState = !this.toggleState;
+      this.$emit('toggle', this.toggleState);
     }
   },
 
   computed: {
     id() {
       return this.name.replace(/ /g, '').toLowerCase();
-    },
-    labelId() {
-      return `${this.id}-label`
     },
   },
 }
@@ -75,8 +79,8 @@ export default {
 .m-toggle {
   $self: &;
   $toggle-spacing: 2px;
-  display: flex;
   align-items: center;
+  display: flex;
   margin: 0 -5px;
 
   > * {
@@ -87,11 +91,11 @@ export default {
   &__label {
     user-select: none;
 
-    .disabled & {
+    .is-disabled & {
       cursor: not-allowed;
     }
 
-    .dark & {
+    .is-dark & {
       color: white;
     }
   }
@@ -109,19 +113,21 @@ export default {
   }
 
   &__content {
-    box-sizing: border-box;
     background: #F0F0F0;
     border-radius: 2em;
+    box-sizing: border-box;
     height: 2em;
     outline: 0;
+    overflow: hidden;
     padding: $toggle-spacing;
-    transition: background .4s ease;
+    transition: background-color .4s ease;
     width: 4em;
-    will-change: background;
+    will-change: background-color;
 
     &:after {
       background: white;
       border-radius: 50%;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, .05);
       content: '';
       display: block;
       height: 100%;
@@ -132,12 +138,12 @@ export default {
       will-change: left;
     }
 
-    .disabled & {
-      opacity: 50%;
+    .is-disabled & {
       cursor: not-allowed;
+      opacity: 50%;
     }
 
-    .dark & {
+    .is-dark & {
       background: #374151;
     }
   }

@@ -1,29 +1,41 @@
 <template>
   <section
-      :class="{'dark': darkTheme, disabled}"
-      :title="title"
+    :class="{
+      'is-dark': darkTheme,
+      'is-disabled': disabled,
+    }"
+    class="m-toggle"
   >
     <input
-        :id="id"
-        v-model="toggleState"
-        :aria-checked="toggleState"
-        :aria-readonly="disabled"
-        :disabled="disabled"
-        :name="name"
-        role="checkbox"
-        type="checkbox"
+      :id="id"
+      v-model="toggleState"
+      :disabled="disabled"
+      :name="name"
+      class="m-toggle__input"
+      type="checkbox"
+    />
+    <span
+      :aria-checked="toggleState"
+      :aria-disabled="disabled"
+      :aria-labelledby="`${id}-label`"
+      :aria-readonly="disabled"
+      :style="toggleState && {
+        'background-color': activeColor
+      }"
+      class="m-toggle__content"
+      role="checkbox"
+      @click="toggle"
     />
     <label
-        :for="id"
-        :style="toggleState && {background: activeColor}"
-        class="toggle__content"
-    />
-    <label
-        :for="id"
-        :style="[{fontSize, fontWeight}]"
-        class="toggle__label"
+      :id="`${id}-label`"
+      :for="id"
+      :style="{
+        'font-size': fontSize,
+        'font-weight': fontWeight,
+      }"
+      class="m-toggle__label"
     >
-      {{title}}
+      {{ title }}
     </label>
   </section>
 </template>
@@ -33,99 +45,92 @@ export default {
   name: 'VueToggle',
 
   props: {
-    activeColor: {type: String, default: '#9FD6AE'},
-    darkTheme:   {type: Boolean, default: false},
-    disabled:    {type: Boolean, default: false },
-    fontSize:    {type: Number, default: 16},
-    fontWeight:  {type: String, default: 'bold'},
-    name:        {type: String, required: true},
-    title:       {type: String, required: true},
-    toggled:     {type: Boolean, default: false},
+    activeColor: { type: String, default: '#9FD6AE' },
+    darkTheme: { type: Boolean, default: false },
+    disabled: { type: Boolean, default: false },
+    fontSize: { type: String, default: '16px' },
+    fontWeight: { type: String, default: 'normal' },
+    name: { type: String, required: true },
+    title: { type: String, required: true },
+    toggled: { type: Boolean, default: false },
   },
 
   data() {
-    return {
-      toggleState: this.toggled
+    return { toggleState: this.toggled }
+  },
+
+  methods: {
+    toggle() {
+      if (this.disabled) return;
+      this.toggleState = !this.toggleState;
+      this.$emit('toggle', this.toggleState);
     }
   },
 
   computed: {
     id() {
-      return `_${this.name.replace(/ /g, '').toLowerCase()}`;
-    }
+      return this.name.replace(/ /g, '').toLowerCase();
+    },
   },
 }
 </script>
 
 <style scoped>
-section {
+.m-toggle {
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
+  margin: 0 -5px;
 }
-.wrapper > * {
+.m-toggle > * {
   cursor: pointer;
   margin: 0 5px;
 }
-.toggle__label {
-  display: inline-block;
-  line-height: 2em;
-  vertical-align: middle;
+.m-toggle__label {
+  user-select: none;
 }
-.toggle__label::selection {
-  background: none;
-}
-.disabled .toggle__label:hover {
+.is-disabled .m-toggle__label {
   cursor: not-allowed;
 }
-.dark .toggle__label {
+.is-dark .m-toggle__label {
   color: white;
 }
-input {
+.m-toggle__input {
   display: none;
 }
-input:after, .toggle + .toggle__content {
-  box-sizing: border-box;
+.m-toggle__input:checked + .m-toggle__content:after {
+  left: calc(50% + 2px);
 }
-input:after::selection, .toggle + .toggle__content::selection {
-  background: none;
-}
-input + .toggle__content {
-  background: #f0f0f0;
+.m-toggle__content {
+  background: #F0F0F0;
   border-radius: 2em;
-  display: block;
+  box-sizing: border-box;
   height: 2em;
   outline: 0;
+  overflow: hidden;
   padding: 2px;
-  position: relative;
-  transition: background 0.4s ease;
-  user-select: none;
+  transition: background-color 0.4s ease;
   width: 4em;
-  will-change: background;
+  will-change: background-color;
 }
-.toggle + .toggle__content:after {
+.m-toggle__content:after {
   background: white;
   border-radius: 50%;
-  content: "";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  content: '';
   display: block;
   height: 100%;
   left: 0;
   position: relative;
   transition: left 0.2s ease;
-  width: 50%;
+  width: calc(50% - 2px);
   will-change: left;
 }
-.disabled .toggle + .toggle__content {
+.is-disabled .m-toggle__content {
+  cursor: not-allowed;
   opacity: 50%;
 }
-.disabled .toggle + .toggle__content:hover {
-  cursor: not-allowed;
-}
-.dark .toggle + .toggle__content {
+.is-dark .m-toggle__content {
   background: #374151;
-}
-.toggle:checked + .toggle__content:after {
-  left: 50%;
 }
 
 </style>
