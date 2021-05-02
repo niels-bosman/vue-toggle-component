@@ -108,13 +108,13 @@ function _nonIterableRest() {
       return this.name.replace(/ /g, '').toLowerCase();
     }
   }
-};var _withId = /*#__PURE__*/vue.withScopeId("data-v-576222af");
+};var _withId = /*#__PURE__*/vue.withScopeId("data-v-5330e797");
 
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("section", {
     class: [{
-      'is-dark': $props.darkTheme,
-      'is-disabled': $props.disabled
+      'm-toggle--is-dark': $props.darkTheme,
+      'm-toggle--is-disabled': $props.disabled
     }, "m-toggle"]
   }, [vue.withDirectives(vue.createVNode("input", {
     id: $options.id,
@@ -172,9 +172,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z = "\n.m-toggle[data-v-576222af] {\n  align-items: center;\n  display: flex;\n  margin: 0 -5px;\n}\n.m-toggle > *[data-v-576222af] {\n  cursor: pointer;\n  margin: 0 5px;\n}\n.m-toggle__label[data-v-576222af] {\n  user-select: none;\n}\n.is-disabled .m-toggle__label[data-v-576222af] {\n  cursor: not-allowed;\n}\n.is-dark .m-toggle__label[data-v-576222af] {\n  color: white;\n}\n.m-toggle__input[data-v-576222af] {\n  display: none;\n}\n.m-toggle__input:checked + .m-toggle__content[data-v-576222af]:after {\n  left: calc(50% + 2px);\n}\n.m-toggle__content[data-v-576222af] {\n  background: #F0F0F0;\n  border-radius: 2em;\n  box-sizing: border-box;\n  height: 2em;\n  outline: 0;\n  overflow: hidden;\n  padding: 2px;\n  transition: background-color 0.4s ease;\n  width: 4em;\n  will-change: background-color;\n}\n.m-toggle__content[data-v-576222af]:after {\n  background: white;\n  border-radius: 50%;\n  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);\n  content: '';\n  display: block;\n  height: 100%;\n  left: 0;\n  position: relative;\n  transition: left 0.2s ease;\n  width: calc(50% - 2px);\n  will-change: left;\n}\n.is-disabled .m-toggle__content[data-v-576222af] {\n  cursor: not-allowed;\n  opacity: 50%;\n}\n.is-dark .m-toggle__content[data-v-576222af] {\n  background: #374151;\n}\n\n";
+}var css_248z = "\n.m-toggle[data-v-5330e797] {\n  align-items: center;\n  display: flex;\n  margin: 0 -5px;\n}\n.m-toggle > *[data-v-5330e797] {\n  cursor: pointer;\n  margin: 0 5px;\n}\n.m-toggle__label[data-v-5330e797] {\n  user-select: none;\n}\n.m-toggle--is-disabled .m-toggle__label[data-v-5330e797] {\n  cursor: not-allowed;\n}\n.m-toggle--is-dark .m-toggle__label[data-v-5330e797] {\n  color: white;\n}\n.m-toggle__input[data-v-5330e797] {\n  display: none;\n}\n.m-toggle__input:checked + .m-toggle__content[data-v-5330e797]:after {\n  left: calc(50% + 2px);\n}\n.m-toggle__content[data-v-5330e797] {\n  background: #F0F0F0;\n  border-radius: 2em;\n  box-sizing: border-box;\n  height: 2em;\n  outline: 0;\n  overflow: hidden;\n  padding: 2px;\n  transition: background-color 0.4s ease;\n  width: 4em;\n  will-change: background-color;\n}\n.m-toggle__content[data-v-5330e797]:after {\n  background: white;\n  border-radius: 50%;\n  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);\n  content: '';\n  display: block;\n  height: 100%;\n  left: 0;\n  position: relative;\n  transition: left 0.2s ease;\n  width: calc(50% - 2px);\n  will-change: left;\n}\n.m-toggle--is-disabled .m-toggle__content[data-v-5330e797] {\n  cursor: not-allowed;\n  opacity: 50%;\n}\n.m-toggle--is-dark .m-toggle__content[data-v-5330e797] {\n  background: #374151;\n}\n\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-576222af";// Import vue component
+script.__scopeId = "data-v-5330e797";// Import vue component
 // IIFE injects install function into component, allowing component
 // to be registered via Vue.use() as well as Vue.component(),
 

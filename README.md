@@ -53,7 +53,7 @@ export default {
 | activeColor   | `String`  | `#9FD6AE` | ❌        | The color that is displayed when the toggler is active.                                            |
 | darkTheme     | `Boolean` | `false`   | ❌        | Set's dark mode to active. (note that this will not change the background like in the preview GIF) |
 | disabled      | `Number`  | `false`   | ❌        | Disables the toggler.                                                                              |
-| fontSize      | `String`  | `16`      | ❌        | Sets the font size of the text next to the toggle                                                  |
+| fontSize      | `String`  | `16px`      | ❌        | Sets the font size of the text next to the toggle                                                  |
 | fontWeight    | `Boolean` | `normal`  | ❌        | Sets the font weight of the text next to the toggle.                                               |
 | toggled       | `Boolean` | `true`    | ❌        | Sets the default value for the toggler.                                                            |
 

@@ -1,8 +1,8 @@
 <template>
   <section
     :class="{
-      'is-dark': darkTheme,
-      'is-disabled': disabled,
+      'm-toggle--is-dark': darkTheme,
+      'm-toggle--is-disabled': disabled,
     }"
     class="m-toggle"
   >
@@ -91,11 +91,11 @@ export default {
   &__label {
     user-select: none;
 
-    .is-disabled & {
+    #{$self}--is-disabled & {
       cursor: not-allowed;
     }
 
-    .is-dark & {
+    #{$self}--is-dark & {
       color: white;
     }
   }
@@ -138,12 +138,12 @@ export default {
       will-change: left;
     }
 
-    .is-disabled & {
+    #{$self}--is-disabled & {
       cursor: not-allowed;
       opacity: 50%;
     }
 
-    .is-dark & {
+    #{$self}--is-dark & {
       background: #374151;
     }
   }
