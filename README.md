@@ -30,17 +30,15 @@ npm install vue-toggle-component --save
 #### Example
 ```html
 <template>
-  <VueToggle title="Toggle me" name="VueToggle"/>
+  <vue-toggle title="Toggle me" name="vue-toggle"/>
 </template>
 
 <script>
-import VueToggle from "vue-toggle-component";
+import VueToggle from 'vue-toggle-component';
 
 export default {
   name: 'App',
-  components: {
-    VueToggle
-  }
+  components: { VueToggle },
 }
 </script>
 ```
