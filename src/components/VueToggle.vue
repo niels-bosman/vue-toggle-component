@@ -1,7 +1,7 @@
 <template>
   <section
     :class="{
-      'm-toggle--is-dark': darkTheme,
+      'm-toggle--is-dark':     darkTheme,
       'm-toggle--is-disabled': disabled,
     }"
     class="m-toggle"
@@ -19,20 +19,14 @@
       :aria-disabled="disabled"
       :aria-labelledby="`${id}-label`"
       :aria-readonly="disabled"
-      :style="toggleState && {
-        'background-color': activeColor
-      }"
       class="m-toggle__content"
+      :class="{'m-toggle__content--active': toggleState}"
       role="checkbox"
       @click="toggle"
     />
     <label
       :id="`${id}-label`"
       :for="id"
-      :style="{
-        'font-size': fontSize,
-        'font-weight': fontWeight,
-      }"
       class="m-toggle__label"
     >
       {{ title }}
@@ -46,17 +40,17 @@ export default {
 
   props: {
     activeColor: { type: String, default: '#9FD6AE' },
-    darkTheme: { type: Boolean, default: false },
-    disabled: { type: Boolean, default: false },
-    fontSize: { type: String, default: '16px' },
-    fontWeight: { type: String, default: 'normal' },
-    name: { type: String, required: true },
-    title: { type: String, required: true },
-    toggled: { type: Boolean, default: false },
+    darkTheme:   { type: Boolean, default: false },
+    disabled:    { type: Boolean, default: false },
+    fontSize:    { type: String, default: '16px' },
+    fontWeight:  { type: String, default: 'normal' },
+    name:        { type: String, required: true },
+    title:       { type: String, required: true },
+    toggled:     { type: Boolean, default: false },
   },
 
   data() {
-    return { toggleState: this.toggled }
+    return { toggleState: this.toggled };
   },
 
   methods: {
@@ -72,7 +66,7 @@ export default {
       return this.name.replace(/ /g, '').toLowerCase();
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -90,6 +84,8 @@ export default {
 
   &__label {
     user-select: none;
+    font-weight: v-bind(fontWeight);
+    font-size: v-bind(fontSize);
 
     #{$self}--is-disabled & {
       cursor: not-allowed;
@@ -123,6 +119,10 @@ export default {
     transition: background-color .4s ease;
     width: 4em;
     will-change: background-color;
+
+    &--active {
+      background-color: v-bind(activeColor);
+    }
 
     &:after {
       background: white;
