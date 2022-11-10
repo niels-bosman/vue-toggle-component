@@ -7315,8 +7315,8 @@ vue-loader@^15.9.2:
     vue-style-loader "^4.1.0"
 
 vue-sfc-rollup@^4.0.5:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/vue-sfc-rollup/-/vue-sfc-rollup-4.1.1.tgz"
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/vue-sfc-rollup/-/vue-sfc-rollup-4.1.2.tgz#b969233d60bcfdfb02b833b37b7ba626f360232f"
   dependencies:
     chalk "^4.1.1"
     ejs "^3.1.6"
